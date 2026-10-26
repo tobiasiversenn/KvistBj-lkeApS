@@ -1,0 +1,140 @@
+body {
+  font-family: "Arial, sans-serif";
+  background-color: #171717;
+  color: #BDBDBD;
+
+}
+
+
+
+
+.NavigationBar {
+  display: block;
+  width: 160px;
+  height: 600px;
+  background: #262626;
+
+  flex-shrink: 0;
+}
+
+.ButtonNavigationBar {
+
+  width: 100%;
+  padding-left: 20px;
+  text-align: left;
+  background-color: #262626;
+  color: grey;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.ButtonNavigationBar:hover {
+  border-color: #00B783;
+
+
+}
+
+.HeadingNavigationBar {
+  padding-left: 20px;
+  margin-bottom: 1px;
+
+}
+
+
+.PageLayout {
+  display: flex;
+  gap: 40px;
+}
+
+.ContentRightToNavigationBar {
+  flex: 1;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.WebsiteNameText {
+  margin: 0;
+  color: #F5F5F5;
+}
+
+
+.LoggedInText {
+  margin: 0;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+
+.WebsiteText {
+  text-align: center;
+
+}
+
+
+
+.LoginPage {
+  width: 450px;
+  height: 400px;
+  background-color: #262626;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: 100px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.TextLoginPage {
+  text-align: left;
+  display: block;
+  width: 60%;
+  margin: 0 auto 5px auto;
+}
+
+
+.InputFieldLoginPage {
+  width: 85%;
+  border-radius: 30px;
+  height: 28px;
+  border: 1px solid #383838;
+  background-color: #171717;
+  color: whitesmoke;
+}
+
+.InputFieldLoginPage:hover {
+  border-color: #00B783;
+}
+
+.InputFieldLoginPage:focus {
+  outline: none;
+  border-color: #00B783;
+}
+
+
+
+.ButtonLoginPage {
+  width: 85%;
+  background-color: #00B783;
+  border-radius: 30px;
+  height: 35px;
+  border: 1px solid #d1d5db;
+
+}
+.ButtonLoginPage:hover {
+  background-color: #00B783;
+}
+
+
+.AlignTextToLeft {
+  text-align: left;
+  display: block;
+  width: 85%;
+  margin: 0 auto 5px auto;
+
+}
+
