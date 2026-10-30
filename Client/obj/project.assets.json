@@ -27,32 +27,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bruger\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Victor\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruger\\OneDrive\\Skrivebord\\KvistBjælkeApS\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\Victor\\src\\KvistBjaelk\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\Bruger\\OneDrive\\Skrivebord\\KvistBjælkeApS\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruger\\OneDrive\\Skrivebord\\KvistBjælkeApS\\Client\\obj\\",
+      "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Client\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -60,8 +52,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Bruger\\OneDrive\\Skrivebord\\KvistBjælkeApS\\Server\\Server.csproj": {
-              "projectPath": "C:\\Users\\Bruger\\OneDrive\\Skrivebord\\KvistBjælkeApS\\Server\\Server.csproj"
+            "C:\\Users\\Victor\\src\\KvistBjaelk\\Server\\Server.csproj": {
+              "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Server\\Server.csproj"
             }
           }
         }
