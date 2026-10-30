@@ -4,6 +4,9 @@ import "./index.css"
 
 import {LoginPage} from "@/LoginPage.tsx";
 import {HomePage} from "@/HomePage.tsx";
+import {AdminPage} from "@/AdminPage.tsx";
+import {UserPage} from "@/UserPage.tsx";
+import {SuperUserPage} from "@/SuperUserPage.tsx";
 
 
 export function App() {
@@ -24,6 +27,7 @@ function AppLayout() {
                 <Routes>
                     <Route path="/" element={<LoginPage/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
+                    <Route path="/adminpage" element={<AdminPage/>}/>
                 </Routes>
             ) : (
 
@@ -50,6 +54,9 @@ function AppLayout() {
                                 <Route path="/" element={<LoginPage/>}/>
                                 <Route path="/homepage" element={<HomePage/>}/>
                                 <Route path="/login" element={<LoginPage/>}/>
+                                <Route path="/adminpage" element={<AdminPage/>}/>
+                                <Route path="/userpage" element={<UserPage/>}/>
+                                <Route path="/superuserpage" element={<SuperUserPage/>}/>
                               
 
 
