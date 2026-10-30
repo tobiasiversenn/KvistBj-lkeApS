@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/tIy72MIrqI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bruger\\OneDrive\\Skrivebord\\KvistBjælkeApS\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bruger\\.nuget\\packages\\linq2db\\6.5.1\\linq2db.6.5.1.nupkg.sha512",
+    "C:\\Users\\Bruger\\.nuget\\packages\\linq2db.analyzers\\6.5.1\\linq2db.analyzers.6.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}
