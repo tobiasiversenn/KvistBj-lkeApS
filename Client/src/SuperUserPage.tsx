@@ -17,9 +17,9 @@ export function SuperUserPage(){
             <h2>Super User page</h2>
 
             <div className="UsersTableDesign">
-                <h2>Manage users in the system</h2>
+                <h2 className="TableHeader">Manage SuperUsers in the system</h2>
                 <button className="AddUser">Create a new SuperUser</button>
-                <table>
+                <table className="Table">
                     <thead>
                     <th className="UsersTableDesignTh">
                         Username

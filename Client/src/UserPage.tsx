@@ -23,11 +23,13 @@ export function UserPage(){
             <h2>User page</h2>
 
             
-            <div className="UsersTableDesignForUser">
+            <div className="UsersTableDesign">
+                <h2 className="TableHeader">View users</h2>
 
 
 
-                <table>
+
+                <table className="Table">
                     <thead>
                     <tr>
                         

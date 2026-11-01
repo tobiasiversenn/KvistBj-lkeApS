@@ -64,6 +64,24 @@ export interface UserQueriesDeleteUserParams {
   userId?: string;
 }
 
+export interface UserQueriesEditUserParams {
+  userId?: string;
+  newUsername?: string;
+  newPassword?: string;
+}
+
+export interface UserQueriesEditAdminParams {
+  adminId?: string;
+  newUsername?: string;
+  newPassword?: string;
+}
+
+export interface UserQueriesEditSuperUserParams {
+  superuserId?: string;
+  newUsername?: string;
+  newPassword?: string;
+}
+
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
 
@@ -485,6 +503,63 @@ export class Api<
       this.request<void, any>({
         path: `/DeleteUser`,
         method: "DELETE",
+        query: query,
+        ...params,
+      }),
+  };
+  editUser = {
+    /**
+     * No description
+     *
+     * @tags UserQueries
+     * @name UserQueriesEditUser
+     * @request PUT:/EditUser
+     */
+    userQueriesEditUser: (
+      query: UserQueriesEditUserParams = {},
+      params: RequestParams = {},
+    ) =>
+      this.request<void, any>({
+        path: `/EditUser`,
+        method: "PUT",
+        query: query,
+        ...params,
+      }),
+  };
+  editAdmin = {
+    /**
+     * No description
+     *
+     * @tags UserQueries
+     * @name UserQueriesEditAdmin
+     * @request PUT:/EditAdmin
+     */
+    userQueriesEditAdmin: (
+      query: UserQueriesEditAdminParams = {},
+      params: RequestParams = {},
+    ) =>
+      this.request<void, any>({
+        path: `/EditAdmin`,
+        method: "PUT",
+        query: query,
+        ...params,
+      }),
+  };
+  editSuperUser = {
+    /**
+     * No description
+     *
+     * @tags UserQueries
+     * @name UserQueriesEditSuperUser
+     * @request PUT:/EditSuperUser
+     */
+    userQueriesEditSuperUser: (
+      query: UserQueriesEditSuperUserParams = {},
+      params: RequestParams = {},
+    ) =>
+      this.request<void, any>({
+        path: `/EditSuperUser`,
+        method: "PUT",
         query: query,
         ...params,
       }),

@@ -6,51 +6,6 @@ body {
 }
 
 
-
-
-.NavigationBar {
-  display: block;
-  width: 160px;
-  height: 600px;
-  background: #262626;
-
-  flex-shrink: 0;
-}
-
-.ButtonNavigationBar {
-
-  width: 100%;
-  padding-left: 20px;
-  text-align: left;
-  background-color: #262626;
-  color: grey;
-  height: 40px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.ButtonNavigationBar:hover {
-  border-color: #00B783;
-
-
-}
-
-.HeadingNavigationBar {
-  padding-left: 20px;
-  margin-bottom: 1px;
-
-}
-
-
-.PageLayout {
-  display: flex;
-  gap: 40px;
-}
-
-.ContentRightToNavigationBar {
-  flex: 1;
-}
-
 .Header {
   display: flex;
   justify-content: space-between;
@@ -140,8 +95,7 @@ body {
 }
 
 .UsersTableDesign {
-  width: 98%;
-  background-color: blue;
+  width: 100%;
   background-color: #262626;
   border-radius: 6px;
 }
@@ -183,23 +137,73 @@ body {
   border-radius: 5px;
   border: 1px solid transparent;
   height: 30px;
-  width: 157px;
+  width: 161px;
   color: white;
   margin-bottom: 10px;
+  margin-left: 10px;
  
 }
 
 .Table {
-  width: 100%;
+  width: calc(100%  - 20px);
   table-layout: fixed;
   border-radius: 10px;
-  border: 1px solid #171717;
-  margin-bottom: 20px;
-  
-  
-}
-
-.Table tr {
   border: 1px solid #383838;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  
+  border-collapse: collapse;
+  
+  
 }
 
+.Table td {
+  border-bottom: 1px solid #383838;
+  padding-top:20px;
+  
+  
+}
+
+.Table th {
+  background-color: #383838;
+  padding-top: 20px;
+
+
+}
+
+
+.TableHeader {
+  padding-left: 10px;
+}
+
+
+.RegisterPopUp {
+  width: 450px;
+  height: 400px;
+  background-color: #262626;
+  text-align: center;
+
+  margin: 0;
+
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+
+.ModalOverlay {
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+  }

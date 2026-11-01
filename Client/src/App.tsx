@@ -34,15 +34,7 @@ function AppLayout() {
                 <>
 
 
-                    <div className="PageLayout">
-
-                        <div className="NavigationBar">
-
-                            
-                        </div>
-
-
-                        <div className="ContentRightToNavigationBar">
+                   
 
                             <div className="Header">
                                 <h1 className="WebsiteNameText"> KvistBjaelkeApS</h1>
@@ -61,12 +53,7 @@ function AppLayout() {
 
 
                             </Routes>
-
-
-                        </div>
-
-                    </div>
-
+                    
 
 
                 </>
