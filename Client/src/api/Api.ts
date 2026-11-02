@@ -17,6 +17,11 @@ export interface Admin {
   role?: string;
 }
 
+export interface LoginRequest {
+  username?: string;
+  password?: string;
+}
+
 export interface SuperUser {
   id?: string;
   username?: string;
@@ -396,6 +401,26 @@ export class Api<
         path: `/DeleteAdmin`,
         method: "DELETE",
         query: query,
+        ...params,
+      }),
+  };
+  loginControllerQueries = {
+    /**
+     * No description
+     *
+     * @tags LoginControllerQueries
+     * @name LoginControllerQueriesLogin
+     * @request POST:/LoginControllerQueries
+     */
+    loginControllerQueriesLogin: (
+      data: LoginRequest,
+      params: RequestParams = {},
+    ) =>
+      this.request<Blob, any>({
+        path: `/LoginControllerQueries`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
         ...params,
       }),
   };

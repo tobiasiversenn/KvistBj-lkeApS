@@ -16,3 +16,11 @@ C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\obj\Debug\net
 C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
 C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\obj\Debug\net10.0\Infrastructure.genruntimeconfig.cache
 C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Bruger\OneDrive\Skrivebord\KvistBjælkeApS\Infrastructure\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll

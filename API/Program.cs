@@ -11,7 +11,16 @@ builder.Services.AddSingleton(new DataOptions<MyDatabaseConnection>(options));
 
 builder.Services.AddOpenApiDocument();
 
-builder.Services.AddCors();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 builder.Services.AddControllers();
 builder.Services.AddScoped<MyDatabaseConnection>();
 
@@ -86,7 +95,7 @@ using (var scope = app.Services.CreateScope())
 }
 
 
-app.UseCors(_ => _.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().SetIsOriginAllowed(_ => true));
+app.UseCors("AllowFrontend");
 app.UseOpenApi();
 app.UseSwaggerUi();
 app.MapControllers();
