@@ -1,70 +1,79 @@
-﻿import {createContext, useContext, useState} from "react";
-import type {LoginRequest} from "./LoginRequest.ts";
-import type {LoginResponse} from "./LoginResponse.ts"; 
-import type {ReactNode} from "react";
-
+﻿
+import { createContext, useContext, useState } from "react";
+import type { LoginRequest } from "./LoginRequest.ts";
+import type { LoginResponse } from "./LoginResponse.ts";
+import type { ReactNode } from "react";
 
 export interface AuthContextType {
     token: string | null;
-    login: (request: LoginRequest) => Promise<string>
-    logout: () => void
+    role: string | null;
+    login: (request: LoginRequest) => Promise<string>;
+    logout: () => void;
+    getToken: () => string | null;
 }
 
-
 const AuthContext = createContext<AuthContextType | null>(null);
-export function useAuth(){
+
+export function useAuth() {
     const context = useContext(AuthContext);
-    if (context == null){
-        throw new Error()
+
+    if (context == null) {
+        throw new Error("useAuth must be used within AuthProvider");
     }
+
     return context;
 }
 
-export function AuthProvider({children}: {children: ReactNode}) {
+export function AuthProvider({ children }: { children: ReactNode }) {
     const [token, setToken] = useState<string | null>(
         sessionStorage.getItem("token")
     );
-    
-    async function login(request: LoginRequest) : Promise<string> {
-        const response = await fetch("http://localhost:5000/LoginControllerQueries", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(request)
-            }
-        )
 
-        console.log("Status:", response.status);
-        console.log("Response:", await response.clone().text());
-        
-        if (response.status === 200){
-            const data: LoginResponse = await response.json();
-            sessionStorage.setItem("token", data.token);
-            setToken(data.token);
-            return data.role;
-            
-        }
+    const [role, setRole] = useState<string | null>(
+        sessionStorage.getItem("role")
+    );
 
-        if (response.status === 401){
-            throw new Error("Incorrect credentials");
-        }
+    const getToken = () => token;
+
+    async function login(request: LoginRequest): Promise<string> {
+        const response = await fetch("http://localhost:5000/Login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(request)
+        });
 
         if (!response.ok) {
-            throw new Error("Login failed");
-        }
-        throw new Error("Unexpected login response");
-}
+            if (response.status === 401) {
+                throw new Error("Incorrect credentials");
+            }
 
-function logout(){
+            throw new Error(`Login failed: ${response.status}`);
+        }
+
+        const data: LoginResponse = await response.json();
+
+        sessionStorage.setItem("token", data.token);
+        sessionStorage.setItem("role", data.role);
+
+        setToken(data.token);
+        setRole(data.role);
+
+        return data.role;
+    }
+
+    function logout() {
         sessionStorage.removeItem("token");
+        sessionStorage.removeItem("role");
+
         setToken(null);
-}
+        setRole(null);
+    }
 
     return (
-        <AuthContext.Provider value={{token, login, logout}}>
+        <AuthContext.Provider value={{ token, role, login, logout, getToken }}>
             {children}
         </AuthContext.Provider>
     );
-
 }

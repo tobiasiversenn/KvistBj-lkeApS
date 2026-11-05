@@ -3,6 +3,9 @@ using LinqToDB;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using NSwag.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,28 @@ builder.Services.AddCors(options =>
     });
 });
 builder.Services.AddControllers();
+
+//Next 16 or so lines are AI generated
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(
+                    builder.Configuration["Jwt:Key"]!
+                )
+            )
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 builder.Services.AddScoped<MyDatabaseConnection>();
 
 
@@ -91,11 +116,34 @@ using (var scope = app.Services.CreateScope())
 
         });
     }
+    
+    // TEMPORARY DEBUGGING CODE
+    Console.WriteLine("=== JAMES DEBUG ===");
+
+    var james = db.Users()
+        .FirstOrDefault(u => u.username == "James");
+
+    if (james != null)
+    {
+        Console.WriteLine($"Username: {james.username}");
+        Console.WriteLine($"Password field: {james.passwordhash}");
+        Console.WriteLine($"Password matches: {james.passwordhash == "password"}");
+    }
+    else
+    {
+        Console.WriteLine("James not found");
+    }
+
+    Console.WriteLine("===================");
 
 }
 
 
 app.UseCors("AllowFrontend");
+//Two lines below are AI generated
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseOpenApi();
 app.UseSwaggerUi();
 app.MapControllers();

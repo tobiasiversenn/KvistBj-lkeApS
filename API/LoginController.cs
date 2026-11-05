@@ -11,7 +11,7 @@ namespace API;
 
 [ApiController]
 [Route("[controller]")]
-public class LoginControllerQueries(MyDatabaseConnection db, IConfiguration configuration) : ControllerBase
+public class LoginController(MyDatabaseConnection db, IConfiguration configuration) : ControllerBase
 {
 
     [HttpPost]
