@@ -7,7 +7,7 @@ namespace API;
 
 [ApiController]
 [Route("[controller]")]
-[Authorize(Roles = "Admin")]
+[Authorize(Roles = "SuperUser, Admin")]
 public class SuperUserController(MyDatabaseConnection db) : ControllerBase
 {
     [HttpGet(nameof(GetAllSuperUsers))]

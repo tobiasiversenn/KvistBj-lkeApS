@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor\\src\\KvistBjaelk\\api\\API.csproj": {}
+    "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor\\src\\KvistBjaelk\\api\\API.csproj": {
+    "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\src\\KvistBjaelk\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\api\\API.csproj",
-        "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\api\\obj\\",
+        "projectPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\tobyi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\tobyi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -27,8 +27,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Victor\\src\\KvistBjaelk\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -365,17 +365,17 @@
         }
       }
     },
-    "C:\\Users\\Victor\\src\\KvistBjaelk\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\src\\KvistBjaelk\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\tobyi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\tobyi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -432,7 +432,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

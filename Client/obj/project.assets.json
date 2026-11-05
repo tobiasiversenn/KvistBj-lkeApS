@@ -428,19 +428,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Victor\\.nuget\\packages\\": {}
+    "C:\\Users\\tobyi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victor\\src\\KvistBjaelk\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Client\\obj\\",
+      "projectPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\tobyi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\tobyi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -453,8 +453,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Victor\\src\\KvistBjaelk\\Server\\Server.csproj": {
-              "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\Server\\Server.csproj"
+            "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Server\\Server.csproj": {
+              "projectPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\Server\\Server.csproj"
             }
           }
         }
@@ -497,7 +497,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

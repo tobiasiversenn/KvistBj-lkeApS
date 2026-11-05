@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor\\src\\KvistBjaelk\\KvistBjælkeApS\\KvistBjælkeApS.csproj": {}
+    "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\KvistBjælkeApS\\KvistBjælkeApS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor\\src\\KvistBjaelk\\KvistBjælkeApS\\KvistBjælkeApS.csproj": {
+    "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\KvistBjælkeApS\\KvistBjælkeApS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\src\\KvistBjaelk\\KvistBjælkeApS\\KvistBjælkeApS.csproj",
+        "projectUniqueName": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\KvistBjælkeApS\\KvistBjælkeApS.csproj",
         "projectName": "KvistBjælkeApS",
-        "projectPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\KvistBjælkeApS\\KvistBjælkeApS.csproj",
-        "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\src\\KvistBjaelk\\KvistBjælkeApS\\obj\\",
+        "projectPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\KvistBjælkeApS\\KvistBjælkeApS.csproj",
+        "packagesPath": "C:\\Users\\tobyi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\KvistBjælkeApS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\tobyi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
