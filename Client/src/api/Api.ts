@@ -36,6 +36,24 @@ export interface User {
   role?: string;
 }
 
+export interface AdminQueriesDeleteAdminParams {
+  adminId?: string;
+}
+
+export interface SuperUserQueriesDeleteSuperUserParams {
+  superUserId?: string;
+}
+
+export interface UserQueriesDeleteUserParams {
+  userId?: string;
+}
+
+export interface UserQueriesEditUserParams {
+  userId?: string;
+  newUsername?: string;
+  newPassword?: string;
+}
+
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
 
@@ -229,7 +247,7 @@ export class HttpClient<SecurityDataType = unknown> {
     baseUrl,
     cancelToken,
     ...params
-  }: FullRequestParams): Promise<HttpResponse<T, E>> => {
+  }: FullRequestParams): Promise<T> => {
     const secureParams =
       ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
         this.securityWorker &&
@@ -286,7 +304,7 @@ export class HttpClient<SecurityDataType = unknown> {
       }
 
       if (!response.ok) throw data;
-      return data;
+      return data.data;
     });
   };
 }
@@ -299,17 +317,17 @@ export class HttpClient<SecurityDataType = unknown> {
 export class Api<
   SecurityDataType extends unknown,
 > extends HttpClient<SecurityDataType> {
-  admin = {
+  adminQueries = {
     /**
      * No description
      *
-     * @tags Admin
-     * @name AdminGetAllAdmins
-     * @request GET:/Admin/GetAllAdmins
+     * @tags AdminQueries
+     * @name AdminQueriesGetAllAdmins
+     * @request GET:/AdminQueries/GetAllAdmins
      */
-    adminGetAllAdmins: (params: RequestParams = {}) =>
+    adminQueriesGetAllAdmins: (params: RequestParams = {}) =>
       this.request<Admin[], any>({
-        path: `/Admin/GetAllAdmins`,
+        path: `/AdminQueries/GetAllAdmins`,
         method: "GET",
         format: "json",
         ...params,
@@ -318,13 +336,13 @@ export class Api<
     /**
      * No description
      *
-     * @tags Admin
-     * @name AdminPostAdmin
-     * @request POST:/Admin/PostAdmin
+     * @tags AdminQueries
+     * @name AdminQueriesPostAdmin
+     * @request POST:/AdminQueries/PostAdmin
      */
-    adminPostAdmin: (data: Admin, params: RequestParams = {}) =>
-      this.request<Blob, any>({
-        path: `/Admin/PostAdmin`,
+    adminQueriesPostAdmin: (data: Admin, params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/AdminQueries/PostAdmin`,
         method: "POST",
         body: data,
         type: ContentType.Json,
@@ -334,18 +352,16 @@ export class Api<
     /**
      * No description
      *
-     * @tags Admin
-     * @name AdminDeleteAdmin
-     * @request DELETE:/Admin/DeleteAdmin
+     * @tags AdminQueries
+     * @name AdminQueriesDeleteAdmin
+     * @request DELETE:/AdminQueries/DeleteAdmin
      */
-    adminDeleteAdmin: (
-      query?: {
-        adminId?: string;
-      },
+    adminQueriesDeleteAdmin: (
+      query: AdminQueriesDeleteAdminParams = {},
       params: RequestParams = {},
     ) =>
-      this.request<Blob, any>({
-        path: `/Admin/DeleteAdmin`,
+      this.request<void, any>({
+        path: `/AdminQueries/DeleteAdmin`,
         method: "DELETE",
         query: query,
         ...params,
@@ -368,17 +384,17 @@ export class Api<
         ...params,
       }),
   };
-  superUser = {
+  superUserQueries = {
     /**
      * No description
      *
-     * @tags SuperUser
-     * @name SuperUserGetAllSuperUsers
-     * @request GET:/SuperUser/GetAllSuperUsers
+     * @tags SuperUserQueries
+     * @name SuperUserQueriesGetAllSuperUsers
+     * @request GET:/SuperUserQueries/GetAllSuperUsers
      */
-    superUserGetAllSuperUsers: (params: RequestParams = {}) =>
+    superUserQueriesGetAllSuperUsers: (params: RequestParams = {}) =>
       this.request<SuperUser[], any>({
-        path: `/SuperUser/GetAllSuperUsers`,
+        path: `/SuperUserQueries/GetAllSuperUsers`,
         method: "GET",
         format: "json",
         ...params,
@@ -387,13 +403,16 @@ export class Api<
     /**
      * No description
      *
-     * @tags SuperUser
-     * @name SuperUserPostSuperUser
-     * @request POST:/SuperUser/PostSuperUser
+     * @tags SuperUserQueries
+     * @name SuperUserQueriesPostSuperUser
+     * @request POST:/SuperUserQueries/PostSuperUser
      */
-    superUserPostSuperUser: (data: SuperUser, params: RequestParams = {}) =>
-      this.request<Blob, any>({
-        path: `/SuperUser/PostSuperUser`,
+    superUserQueriesPostSuperUser: (
+      data: SuperUser,
+      params: RequestParams = {},
+    ) =>
+      this.request<void, any>({
+        path: `/SuperUserQueries/PostSuperUser`,
         method: "POST",
         body: data,
         type: ContentType.Json,
@@ -403,34 +422,32 @@ export class Api<
     /**
      * No description
      *
-     * @tags SuperUser
-     * @name SuperUserDeleteSuperUser
-     * @request DELETE:/SuperUser/DeleteSuperUser
+     * @tags SuperUserQueries
+     * @name SuperUserQueriesDeleteSuperUser
+     * @request DELETE:/SuperUserQueries/DeleteSuperUser
      */
-    superUserDeleteSuperUser: (
-      query?: {
-        superUserId?: string;
-      },
+    superUserQueriesDeleteSuperUser: (
+      query: SuperUserQueriesDeleteSuperUserParams = {},
       params: RequestParams = {},
     ) =>
-      this.request<Blob, any>({
-        path: `/SuperUser/DeleteSuperUser`,
+      this.request<void, any>({
+        path: `/SuperUserQueries/DeleteSuperUser`,
         method: "DELETE",
         query: query,
         ...params,
       }),
   };
-  user = {
+  userQueries = {
     /**
      * No description
      *
-     * @tags User
-     * @name UserGetAllUsers
-     * @request GET:/User/GetAllUsers
+     * @tags UserQueries
+     * @name UserQueriesGetAllUsers
+     * @request GET:/UserQueries/GetAllUsers
      */
-    userGetAllUsers: (params: RequestParams = {}) =>
+    userQueriesGetAllUsers: (params: RequestParams = {}) =>
       this.request<User[], any>({
-        path: `/User/GetAllUsers`,
+        path: `/UserQueries/GetAllUsers`,
         method: "GET",
         format: "json",
         ...params,
@@ -439,13 +456,13 @@ export class Api<
     /**
      * No description
      *
-     * @tags User
-     * @name UserPostUser
-     * @request POST:/User/PostUser
+     * @tags UserQueries
+     * @name UserQueriesPostUser
+     * @request POST:/UserQueries/PostUser
      */
-    userPostUser: (data: User, params: RequestParams = {}) =>
-      this.request<Blob, any>({
-        path: `/User/PostUser`,
+    userQueriesPostUser: (data: User, params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/UserQueries/PostUser`,
         method: "POST",
         body: data,
         type: ContentType.Json,
@@ -455,18 +472,16 @@ export class Api<
     /**
      * No description
      *
-     * @tags User
-     * @name UserDeleteUser
-     * @request DELETE:/User/DeleteUser
+     * @tags UserQueries
+     * @name UserQueriesDeleteUser
+     * @request DELETE:/UserQueries/DeleteUser
      */
-    userDeleteUser: (
-      query?: {
-        userId?: string;
-      },
+    userQueriesDeleteUser: (
+      query: UserQueriesDeleteUserParams = {},
       params: RequestParams = {},
     ) =>
-      this.request<Blob, any>({
-        path: `/User/DeleteUser`,
+      this.request<void, any>({
+        path: `/UserQueries/DeleteUser`,
         method: "DELETE",
         query: query,
         ...params,
@@ -475,64 +490,16 @@ export class Api<
     /**
      * No description
      *
-     * @tags User
-     * @name UserEditUser
-     * @request PUT:/User/EditUser
+     * @tags UserQueries
+     * @name UserQueriesEditUser
+     * @request PUT:/UserQueries/EditUser
      */
-    userEditUser: (
-      query?: {
-        userId?: string;
-        newUsername?: string;
-        newPassword?: string;
-      },
+    userQueriesEditUser: (
+      query: UserQueriesEditUserParams = {},
       params: RequestParams = {},
     ) =>
-      this.request<Blob, any>({
-        path: `/User/EditUser`,
-        method: "PUT",
-        query: query,
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags User
-     * @name UserEditAdmin
-     * @request PUT:/User/EditAdmin
-     */
-    userEditAdmin: (
-      query?: {
-        adminId?: string;
-        newUsername?: string;
-        newPassword?: string;
-      },
-      params: RequestParams = {},
-    ) =>
-      this.request<Blob, any>({
-        path: `/User/EditAdmin`,
-        method: "PUT",
-        query: query,
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags User
-     * @name UserEditSuperUser
-     * @request PUT:/User/EditSuperUser
-     */
-    userEditSuperUser: (
-      query?: {
-        superuserId?: string;
-        newUsername?: string;
-        newPassword?: string;
-      },
-      params: RequestParams = {},
-    ) =>
-      this.request<Blob, any>({
-        path: `/User/EditSuperUser`,
+      this.request<void, any>({
+        path: `/UserQueries/EditUser`,
         method: "PUT",
         query: query,
         ...params,

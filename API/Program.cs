@@ -26,7 +26,6 @@ builder.Services.AddCors(options =>
 });
 builder.Services.AddControllers();
 
-//Next 16 or so lines are AI generated
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -117,30 +116,11 @@ using (var scope = app.Services.CreateScope())
         });
     }
     
-    // TEMPORARY DEBUGGING CODE
-    Console.WriteLine("=== JAMES DEBUG ===");
-
-    var james = db.Users()
-        .FirstOrDefault(u => u.username == "James");
-
-    if (james != null)
-    {
-        Console.WriteLine($"Username: {james.username}");
-        Console.WriteLine($"Password field: {james.passwordhash}");
-        Console.WriteLine($"Password matches: {james.passwordhash == "password"}");
-    }
-    else
-    {
-        Console.WriteLine("James not found");
-    }
-
-    Console.WriteLine("===================");
-
+    Console.WriteLine("KvistAndBjaelkeAps program has been started");
 }
 
 
 app.UseCors("AllowFrontend");
-//Two lines below are AI generated
 app.UseAuthentication();
 app.UseAuthorization();
 
