@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace API;
 
-[ApiController]
-[Route("[controller]")]
+
 public class UserQueries(MyDatabaseConnection db) : ControllerBase
 {
     [HttpGet(nameof(GetAllUsers))]

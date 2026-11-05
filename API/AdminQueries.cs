@@ -5,8 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API;
 
-[ApiController]
-[Route("[controller]")]
+
 [Authorize(Roles = "Admin")]
 public class AdminQueries (MyDatabaseConnection db) : ControllerBase
 {
@@ -32,5 +31,16 @@ public class AdminQueries (MyDatabaseConnection db) : ControllerBase
             db.Delete(admin);
     }
     
+    
+    [HttpPut(nameof(EditAdmin))]
+
+    public void EditAdmin(string adminId, string newUsername, string newPassword)
+    
+    {
+        var admin = db.Admins().FirstOrDefault(a => a.Id == adminId);
+        admin.username = newUsername;
+        admin.passwordhash = newPassword;
+        db.Update(admin);
+    }
     
 }

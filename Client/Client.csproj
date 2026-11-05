@@ -8,10 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\API\API.csproj" />
+      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
       <ProjectReference Include="..\Server\Server.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="NSwag.AspNetCore" Version="14.7.1" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
     </ItemGroup>
 

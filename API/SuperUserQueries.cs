@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API;
-[ApiController]
-[Route("[controller]")]
+
 [Authorize(Roles = "SuperUser, Admin")]
 
 public class SuperUserQueries (MyDatabaseConnection db) : ControllerBase
@@ -33,4 +32,15 @@ public class SuperUserQueries (MyDatabaseConnection db) : ControllerBase
     }
     
     
+    
+    [HttpPut(nameof(EditSuperUser))]
+
+    public void EditSuperUser(string superUserId, string newUsername, string newPassword)
+    
+    {
+        var superUser = db.SuperUsers().FirstOrDefault(su => su.Id == superUserId);
+        superUser.username = newUsername;
+        superUser.passwordhash = newPassword;
+        db.Update(superUser);
+    }
 }
