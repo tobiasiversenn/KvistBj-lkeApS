@@ -1,12 +1,5 @@
 
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-    useLocation,
-    useNavigate,
-    Navigate
-} from "react-router-dom";
+import {BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate} from "react-router-dom";
 
 import { useAuth } from "../AuthProvider.tsx";
 import { AuthProvider } from "../AuthProvider.tsx";
@@ -66,9 +59,8 @@ function AppLayout() {
 
 
                 <Route
-                    path="/userpage"
-                    element={
-                        <ProtectedRoute allowedRoles={["User"]}>
+                    path="/userpage" element={
+                    <ProtectedRoute allowedRoles={["User"]}>
                             <UserPage />
                         </ProtectedRoute>
                     }

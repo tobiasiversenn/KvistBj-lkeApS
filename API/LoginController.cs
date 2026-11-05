@@ -10,6 +10,8 @@ namespace API;
 
 
 
+[ApiController]
+[Route("[controller]")]
 public class LoginController(MyDatabaseConnection db, IConfiguration configuration) : ControllerBase
 {
 

@@ -7,9 +7,9 @@ export function UserPage() {
     const [users, setUsers] = useState<User[]>([]);
 
     useEffect(() => {
-        api.user.userGetAllUsers()
+        api.getAllUsers.userQueriesGetAllUsers()
             .then(r => {
-                setUsers(r.data);
+                setUsers(r);
             })
             .catch(error => {
                 console.error("Failed to retrieve users:", error);

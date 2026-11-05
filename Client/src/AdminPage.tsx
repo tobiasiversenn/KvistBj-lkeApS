@@ -38,7 +38,6 @@ export function AdminPage(){
 
     }, []);
 
-    api.
 
 
 
@@ -141,7 +140,7 @@ export function AdminPage(){
 
 
     const handleEditAdmin = () => {
-        api.editAdmin.userQueriesEditAdmin({
+        api.editAdmin.adminQueriesEditAdmin({
             adminId: IdOfUserToEdit,
             newUsername: editedUsername,
             newPassword: editedPassword
@@ -162,8 +161,8 @@ export function AdminPage(){
     }
 
     const handleEditSuperUser = () => {
-        api.editSuperUser.userQueriesEditSuperUser({
-            superuserId: IdOfUserToEdit,
+        api.editSuperUser.superUserQueriesEditSuperUser({
+            superUserId: IdOfUserToEdit,
             newUsername: editedUsername,
             newPassword: editedPassword
         })
