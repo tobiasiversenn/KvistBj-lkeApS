@@ -59,6 +59,25 @@ using (var scope = app.Services.CreateScope())
 
 
 
+    var users = db.Users().ToList();
+    foreach (var u in users)
+    {
+        db.Delete(u);
+    }
+    
+    var superusers = db.SuperUsers().ToList();
+    foreach (var su in superusers)
+    {
+        db.Delete(su);
+    }
+    
+    
+    var admins = db.Admins().ToList();
+    foreach (var a in admins)
+    {
+        db.Delete(a);
+    }
+    
     if (!db.Users().Any())
     {
         db.Insert(new User()
