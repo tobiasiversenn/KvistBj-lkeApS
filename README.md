@@ -73,7 +73,6 @@ What this does is that we split the HashedPassword stored from the database to t
 
 
 Token generation is also used. This does so when a user logs in with valid credentials then they get a token that can be found in the browsers sessionStorage. Tokens are used for many applications worldwide and is a good security feature. 
-<img width="551" height="405" alt="image" src="https://github.com/user-attachments/assets/b70748b6-0a6e-4c7d-a5d4-9ba4f16f91b9" />
 
 
 
