@@ -57,6 +57,7 @@ When a user is registered, their password is also hashed. It happens in this cod
 <img width="650" height="159" alt="image" src="https://github.com/user-attachments/assets/456bfaad-92c2-4356-8505-d24776bf5087" />
 
 This image is from the userQueriesController in the backend. It calls the HashAndSaltPassword(string password) method from the Argon2PasswordHasher class which will hash and salt the password. The Argon2PasswordHasher code looks like this for that method: 
+
 <img width="567" height="134" alt="image" src="https://github.com/user-attachments/assets/348685e0-536f-4fc8-9dc5-01df767e7c2c" />
 <img width="603" height="330" alt="image" src="https://github.com/user-attachments/assets/cee1beb7-4804-467b-af09-34ba299c6d4e" />
 
