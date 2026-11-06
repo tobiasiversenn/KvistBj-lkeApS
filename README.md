@@ -1,4 +1,8 @@
 CDS.security – Submission requirements
+
+To run the program 
+Install docker desktop and in the project root directory (KvistBjælkeApS) open the terminal and type docker compose up --build
+
 Your submission must include:
 1.	Description of the developed login platform.
 The login platform includes a platform where the user enters a username and password and then the user is redirected to either the page for users, admins or superusers depending on whether the login is from a user, superuser or admin. The user must log in with a valid username and password in order to access these pages.
