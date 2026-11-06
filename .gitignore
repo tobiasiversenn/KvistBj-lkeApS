@@ -1,0 +1,28 @@
+﻿# Project exclude paths
+/API/bin/Debug/net10.0/node_modules/
+
+# Build output
+bin/
+obj/
+
+# Rider / Visual Studio
+.vs/
+.idea/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.DotSettings.user
+
+# Node
+node_modules/
+
+# SQLite database
+*.db
+*.db-shm
+*.db-wal
+
+# OS
+.DS_Store
+Thumbs.db
