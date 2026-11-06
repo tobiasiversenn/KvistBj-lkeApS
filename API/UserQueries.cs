@@ -1,4 +1,5 @@
 ﻿
+using API.Security;
 using Infrastructure;
 using LinqToDB;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace API;
 
 
-public class UserQueries(MyDatabaseConnection db) : ControllerBase
+public class UserQueries(MyDatabaseConnection db, IPasswordHasher passwordHasher) : ControllerBase
 {
     [HttpGet(nameof(GetAllUsers))]
     [Authorize(Roles = "User,SuperUser,Admin")]
@@ -24,6 +25,7 @@ public class UserQueries(MyDatabaseConnection db) : ControllerBase
     {
         user.Id = Guid.NewGuid().ToString();
         user.role = "User";
+        user.passwordhash = passwordHasher.HashAndSaltPassword(user.passwordhash);
         db.Insert(user);
     }
 
@@ -45,7 +47,7 @@ public class UserQueries(MyDatabaseConnection db) : ControllerBase
     {
         var user = db.Users().FirstOrDefault(u => u.Id == userId);
         user.username = newUsername;
-        user.passwordhash = newPassword;
+        user.passwordhash = passwordHasher.HashAndSaltPassword(newPassword);
         db.Update(user);
     }
 }

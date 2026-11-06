@@ -145,21 +145,33 @@ using (var scope = app.Services.CreateScope())
     {
         Console.WriteLine(u.username);
         Console.WriteLine(u.passwordhash);
+        Console.WriteLine("");
+
     }
     
+    Console.WriteLine("");
+
     Console.WriteLine("Admin accounts: ");
     foreach (var a in admins)
     {
         Console.WriteLine(a.username);
         Console.WriteLine(a.passwordhash);
+        Console.WriteLine("");
+
     }
+    Console.WriteLine("");
+
     
     Console.WriteLine("Superuser accounts: ");
     foreach (var su in superusers)
     {
         Console.WriteLine(su.username);
         Console.WriteLine(su.passwordhash);
+        Console.WriteLine("");
+
     }
+    Console.WriteLine("");
+
 }
 
 

@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using API.Security;
+using Infrastructure;
 using LinqToDB;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ namespace API;
 
 
 [Authorize(Roles = "Admin")]
-public class AdminQueries (MyDatabaseConnection db) : ControllerBase
+public class AdminQueries (MyDatabaseConnection db, IPasswordHasher passwordHasher) : ControllerBase
 {
     [HttpGet(nameof(GetAllAdmins))]
     public List<Admin> GetAllAdmins()
@@ -20,6 +21,8 @@ public class AdminQueries (MyDatabaseConnection db) : ControllerBase
     {
         admin.Id = Guid.NewGuid().ToString();
         admin.role = "Admin";
+        admin.passwordhash = passwordHasher.HashAndSaltPassword(admin.passwordhash);
+
         db.Insert(admin);
     }
 
@@ -39,7 +42,7 @@ public class AdminQueries (MyDatabaseConnection db) : ControllerBase
     {
         var admin = db.Admins().FirstOrDefault(a => a.Id == adminId);
         admin.username = newUsername;
-        admin.passwordhash = newPassword;
+        admin.passwordhash = passwordHasher.HashAndSaltPassword(newPassword);
         db.Update(admin);
     }
     

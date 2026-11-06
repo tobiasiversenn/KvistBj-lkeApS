@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using API.Security;
+using Infrastructure;
 using LinqToDB;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ namespace API;
 
 [Authorize(Roles = "SuperUser, Admin")]
 
-public class SuperUserQueries (MyDatabaseConnection db) : ControllerBase
+public class SuperUserQueries (MyDatabaseConnection db, IPasswordHasher passwordHasher) : ControllerBase
 {
     [HttpGet(nameof(GetAllSuperUsers))]
     public List<SuperUser> GetAllSuperUsers()
@@ -20,6 +21,8 @@ public class SuperUserQueries (MyDatabaseConnection db) : ControllerBase
     {
         superUser.Id = Guid.NewGuid().ToString();
         superUser.role = "SuperUser";
+        superUser.passwordhash = passwordHasher.HashAndSaltPassword(superUser.passwordhash);
+
         db.Insert(superUser);
     }
 
@@ -40,7 +43,7 @@ public class SuperUserQueries (MyDatabaseConnection db) : ControllerBase
     {
         var superUser = db.SuperUsers().FirstOrDefault(su => su.Id == superUserId);
         superUser.username = newUsername;
-        superUser.passwordhash = newPassword;
+        superUser.passwordhash = passwordHasher.HashAndSaltPassword(newPassword);
         db.Update(superUser);
     }
 }
