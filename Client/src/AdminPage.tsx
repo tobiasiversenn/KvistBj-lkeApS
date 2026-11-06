@@ -1,7 +1,6 @@
 ﻿import {useEffect, useState} from "react";
-import {Api, type Admin, type User, type SuperUser} from "@/api/Api.ts";
-
-const api = new Api();
+import { api } from "@/api/apiClient.ts";
+import type { User, Admin, SuperUser} from "@/api/Api.ts";
 
 
 export function AdminPage(){
