@@ -5,6 +5,8 @@ C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Inf
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Infrastructure.pdb
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\linq2db.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
@@ -22,5 +24,3 @@ C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\obj\Debug\net10.0\ref
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\obj\Debug\net10.0\Infrastructure.genruntimeconfig.cache
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
-C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\Infrastructure\bin\Debug\net10.0\Microsoft.Extensions.Logging.Abstractions.dll

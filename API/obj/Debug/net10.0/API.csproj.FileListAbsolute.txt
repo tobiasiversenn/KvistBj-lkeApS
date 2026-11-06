@@ -6,6 +6,8 @@ C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\API.deps.json
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\API.runtimeconfig.json
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\API.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\API.pdb
+C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\Konscious.Security.Cryptography.Argon2.dll
+C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\Konscious.Security.Cryptography.Blake2.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\linq2db.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
@@ -69,5 +71,3 @@ C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\obj\Debug\net10.0\refint\API.dll
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\obj\Debug\net10.0\API.pdb
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\obj\Debug\net10.0\API.genruntimeconfig.cache
 C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\obj\Debug\net10.0\ref\API.dll
-C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\Konscious.Security.Cryptography.Argon2.dll
-C:\Users\tobyi\RiderProjects\KvistBj-lkeApS\API\bin\Debug\net10.0\Konscious.Security.Cryptography.Blake2.dll

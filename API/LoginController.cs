@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using API.Security;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -12,27 +13,54 @@ namespace API;
 
 [ApiController]
 [Route("[controller]")]
-public class LoginController(MyDatabaseConnection db, IConfiguration configuration) : ControllerBase
+public class LoginController(MyDatabaseConnection db, IConfiguration configuration, IPasswordHasher passwordHasher) : ControllerBase
 {
 
     [HttpPost]
     public IActionResult Login([FromBody] LoginRequest loginRequest)
     {
-        var user = db.Users().FirstOrDefault(u =>
-            u.username == loginRequest.username && u.passwordhash == loginRequest.password);
-        
-        var admin = db.Admins().FirstOrDefault(a =>
-            a.username == loginRequest.username &&
-            a.passwordhash == loginRequest.password);
-
-        var superUser = db.SuperUsers().FirstOrDefault(su =>
-            su.username == loginRequest.username &&
-            su.passwordhash == loginRequest.password);
-        
-        if (user == null && admin == null && superUser == null)
+        var user = db.Users().FirstOrDefault(u => u.username == loginRequest.username);
+        if (user != null)
         {
-            return Unauthorized();
+            var savedpasswordHash = user.passwordhash;
+            bool isUserPasswordCorrect = passwordHasher.VerifyHashedPassword(loginRequest.password, savedpasswordHash);
+
+            if (!isUserPasswordCorrect)
+            {
+                return Unauthorized();
+            }
         }
+        
+        
+        
+        var admin = db.Admins().FirstOrDefault(a => a.username == loginRequest.username);
+        if (admin != null)
+        {
+            var savedpasswordHashForAdmin = admin.passwordhash;
+            bool isAdminPasswordCorrect = passwordHasher.VerifyHashedPassword(loginRequest.password, savedpasswordHashForAdmin);
+
+            if (!isAdminPasswordCorrect)
+            {
+                return Unauthorized();
+            }
+        }
+        
+
+
+        var superUser = db.SuperUsers().FirstOrDefault(su => su.username == loginRequest.username);
+        if (superUser != null)
+        {
+            var savedpasswordHashForSuperUser = superUser.passwordhash;
+            bool isSuperUserPasswordCorrect = passwordHasher.VerifyHashedPassword(loginRequest.password, savedpasswordHashForSuperUser);
+
+            if (!isSuperUserPasswordCorrect)
+            {
+                return Unauthorized();
+            }
+        }
+        
+        
+        
         
 
         var key = configuration["Jwt:Key"];
