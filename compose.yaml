@@ -1,1 +1,20 @@
+services:
 
+  backend:
+    build:
+      context: .
+      dockerfile: API/Dockerfile
+    ports:
+      - "5000:8080"
+    volumes:
+      - kvistbjaelkeaps-db:/app/data
+
+  frontend:
+    build:
+      context: ./Client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+volumes:
+  kvistbjaelkeaps-db:
