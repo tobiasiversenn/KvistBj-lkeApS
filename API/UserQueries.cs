@@ -23,6 +23,7 @@ public class UserQueries(MyDatabaseConnection db) : ControllerBase
     public void PostUser(User user)
     {
         user.Id = Guid.NewGuid().ToString();
+        user.role = "User";
         db.Insert(user);
     }
 

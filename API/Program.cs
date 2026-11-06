@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NSwag.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using System.Text;using API.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,12 +47,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<MyDatabaseConnection>();
+builder.Services.AddScoped<IPasswordHasher, Argon2PasswordHasher>();
+
 
 
 var app =  builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MyDatabaseConnection>();
+    var passwordHasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
+
     db.CreateTable<User>(tableOptions: TableOptions.CreateIfNotExists);
     db.CreateTable<SuperUser>(tableOptions: TableOptions.CreateIfNotExists);
     db.CreateTable<Admin>(tableOptions: TableOptions.CreateIfNotExists);
@@ -84,7 +88,7 @@ using (var scope = app.Services.CreateScope())
         {
             Id = Guid.NewGuid().ToString(),
             username = "James",
-            passwordhash = "password",
+            passwordhash = passwordHasher.HashAndSaltPassword("password"),
             role = "User"
 
         });
@@ -94,7 +98,7 @@ using (var scope = app.Services.CreateScope())
         {
             Id = Guid.NewGuid().ToString(),
             username = "Michael",
-            passwordhash = "password",
+            passwordhash = passwordHasher.HashAndSaltPassword("password"),
             role = "User"
 
         });
@@ -103,7 +107,7 @@ using (var scope = app.Services.CreateScope())
         {
             Id = Guid.NewGuid().ToString(),
             username = "Henry",
-            passwordhash = "password",
+            passwordhash = passwordHasher.HashAndSaltPassword("password"),
             role = "User"
 
         });
@@ -136,6 +140,11 @@ using (var scope = app.Services.CreateScope())
     }
     
     Console.WriteLine("KvistAndBjaelkeAps program has been started");
+    foreach (var u in users)
+    {
+        Console.WriteLine(u.username);
+        Console.WriteLine(u.passwordhash);
+    }
 }
 
 

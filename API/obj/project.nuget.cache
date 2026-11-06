@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Cn9BjcnLPgA=",
+  "dgSpecHash": "9WqwsK1v4TU=",
   "success": true,
   "projectFilePath": "C:\\Users\\tobyi\\RiderProjects\\KvistBj-lkeApS\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tobyi\\.nuget\\packages\\konscious.security.cryptography.argon2\\1.3.1\\konscious.security.cryptography.argon2.1.3.1.nupkg.sha512",
+    "C:\\Users\\tobyi\\.nuget\\packages\\konscious.security.cryptography.blake2\\1.1.1\\konscious.security.cryptography.blake2.1.1.1.nupkg.sha512",
     "C:\\Users\\tobyi\\.nuget\\packages\\linq2db\\6.5.1\\linq2db.6.5.1.nupkg.sha512",
     "C:\\Users\\tobyi\\.nuget\\packages\\linq2db.analyzers\\6.5.1\\linq2db.analyzers.6.5.1.nupkg.sha512",
     "C:\\Users\\tobyi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.14\\microsoft.aspnetcore.authentication.jwtbearer.10.0.14.nupkg.sha512",
