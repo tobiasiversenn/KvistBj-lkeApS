@@ -17,7 +17,18 @@ You can login to the application with the following accounts to test the applica
 <br> Role: Admin
 
 Whenever you close the program, the database resets so that these accounts can be used to log in to the system again in case they were deleted under the administration panels in the program. Additional accounts that can log in to the program can be found in the Program.cs file under the API project.
+The GUI to the application of the loginpage, userpage, adminpage and superuserpage looks as follows: 
+Loginpage: 
+<img width="2559" height="1264" alt="image" src="https://github.com/user-attachments/assets/b0b81b92-5b98-4709-8348-cca1e1a126a8" />
 
+Userpage: 
+<img width="2559" height="1262" alt="image" src="https://github.com/user-attachments/assets/1b3f6fee-ea44-4d6a-9297-53fca7b7d829" />
+
+Adminpage: 
+<img width="2559" height="1261" alt="image" src="https://github.com/user-attachments/assets/c9167546-d77f-4f1f-8512-79a9d9771e18" />
+
+Superuserpage: 
+<img width="2559" height="1256" alt="image" src="https://github.com/user-attachments/assets/d666bcf8-ee9c-4588-8054-b9ec810073cb" />
 
 
 
@@ -25,9 +36,12 @@ Whenever you close the program, the database resets so that these accounts can b
 along the way.
 
 The login platform includes security features such as authorization, authentication, password hashing and token generation. 
-Authorization is used so 
-Authentication is used so
+Authorization is used to check that when a user logs in, then the users username and password should match an exisiting user found in the database.
+
+Authentication is used so only users with the right roles should be able to access specific pages. For example if you log in to the application with a user account, then you are not able to access the admin page, since you have only the User role and not the admin role.
+
 Password hashing is used so users passwords are not stored as plain text in the database, but instead they are hashed. This is great so if the database gets compromised then all the passwords will not be directly available, they will instead be in a different format so they are useless information for the person that gains access to the database.
+
 Token generation is also used. This does so when a user logs in with valid credentials then they get a token that can be found in the browsers sessionStorage. Tokens are used for many applications worldwide and is a good security feature. 
 
 
@@ -70,4 +84,14 @@ IP phones uses a /26. This gives 62 usable host addresses. The company needs 12 
 6. Documentation of the client machine on VLAN 570.
 7. Documentation demonstrating communication between the client and the login platform.
 8. Brief description of any challenges encountered and how they were resolved. 
+
+
+Final reflection
+Conclude your submission with a brief overall reflection on the assignment.
+Consider questions such as:
+• How are security and infrastructure interconnected?
+The two subjects are interconnected in the way that the security subject manages the security of the login platform, by implementing the security features authorization, authentication, password hashing and token generation. The infrastructure subject makes it possible to host the application with Docker and to run the application via Ubuntu Server. 
+• What technical challenges did you encounter?
+• What did you learn about deploying an application on a server?
+• What would you do differently if the solution were to be deployed in a real company?
 
