@@ -41,6 +41,11 @@ Authorization is used to check that when a user logs in, then the users username
 Authentication is used so only users with the right roles should be able to access specific pages. For example if you log in to the application with a user account, then you are not able to access the admin page, since you have only the User role and not the admin role.
 
 Password hashing is used so users passwords are not stored as plain text in the database, but instead they are hashed. This is great so if the database gets compromised then all the passwords will not be directly available, they will instead be in a different format so they are useless information for the person that gains access to the database.
+When getting all the users usernames and passwords from the database, you can see that the passwords are hashed. The passwords are hashing in the way that they are concatenated by a hash and a salt. The part before the "." in the passwordhash in the hash and the part after the "." is the salt.
+<img width="590" height="350" alt="image" src="https://github.com/user-attachments/assets/ccd642d6-4e8c-46da-bae1-c73f49911548" />
+When a user is registered, their password is also hashed. It happens in this code: 
+
+
 
 Token generation is also used. This does so when a user logs in with valid credentials then they get a token that can be found in the browsers sessionStorage. Tokens are used for many applications worldwide and is a good security feature. 
 
