@@ -16,7 +16,7 @@ You can login to the application with the following accounts to test the applica
 <br> Password: "password"
 <br> Role: Admin
 
-Whenever you close the program, the database resets so that these accounts can be used to log in to the system again in case they were deleted under the administration panels in the program. Additional accounts that can log in to the program can be found in the Program.cs file under the API project.
+Whenever you close the program, the database resets so that these accounts can be used to log in to the system again in case they were deleted under the administration panels in the program. Additional accounts with the ability to log in to the program can be found in the Program.cs file under the API project.
 The GUI to the application of the loginpage, userpage, adminpage and superuserpage looks as follows: 
 Loginpage: 
 <img width="2559" height="1264" alt="image" src="https://github.com/user-attachments/assets/b0b81b92-5b98-4709-8348-cca1e1a126a8" />
@@ -50,7 +50,7 @@ This does so the user must have the admin role in order to access this.
 
 
 Password hashing is used so users passwords are not stored as plain text in the database, but instead they are hashed. This is great so if the database gets compromised then all the passwords will not be directly available, they will instead be in a different format so they are useless information for the person that gains access to the database.
-When getting all the users usernames and passwords from the database, you can see that the passwords are hashed. The passwords are hashing in the way that they are concatenated by a hash and a salt. The part before the "." in the passwordhash in the hash and the part after the "." is the salt.
+When retrieving all the usernames and passwords from the database, you can see that the passwords are hashed. The passwords are hashed in the way that they are concatenated by a hash and a salt. The part before the "." in the passwordhash is the hash and the part after the "." is the salt.
 <img width="590" height="350" alt="image" src="https://github.com/user-attachments/assets/ccd642d6-4e8c-46da-bae1-c73f49911548" />
 
 When a user is registered, their password is also hashed. It happens in this code: 
@@ -71,11 +71,9 @@ After that is done, the code calls a method from the Argon2PasswordHasher to che
 What this does is that we split the HashedPassword stored from the database to that user where there is a ".". The "." seperates the hash and salt so we can now store the salt as a variable. We need to do this because we should not call the method to create a new salt because every new salt generated will be random. So we then call HashPassword(password, salt); and store it in a variable string hashedPasswordForGivenPassword. This will hash the password that the user entered and use the salt to the PasswordHash already found in the database for that user. We then check whether the newly Hashed password is the same as the hashed password stored in the database for that user. If it is, we return true, otherwise false. 
 
 
-
-Password hashing is used in the way that the program reads the password that the user enters and finds the passwordhash in the database stored for that specific user. It then
-
-
 Token generation is also used. This does so when a user logs in with valid credentials then they get a token that can be found in the browsers sessionStorage. Tokens are used for many applications worldwide and is a good security feature. 
+<img width="551" height="405" alt="image" src="https://github.com/user-attachments/assets/b70748b6-0a6e-4c7d-a5d4-9ba4f16f91b9" />
+
 
 
 CDS.infrastructure – Submission requirements
