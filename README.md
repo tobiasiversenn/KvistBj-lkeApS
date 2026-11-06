@@ -107,7 +107,22 @@ The client and server uses a /24 which gives 254 usable addresses
 The computer uses a /24. The company has 15 desktop computers and 10 laptop computers so 254 usable addresses is a lot but in case the company expands then we have got enough computers/laptops
 Network printers uses a /27. This gives 30 usable addresses. The company needs 3 network printers, but in case of company expansion, then we have got enough addresses. 
 Servers uses a /27. This gives 30 usable addresses. The company needs 3 servers but again, because of the expansion we have set some extra addresses. 
-IP phones uses a /26. This gives 62 usable host addresses. The company needs 12 IP phones, but in case the company expands, then we have got enough host addresses. 
+IP phones uses a /26. This gives 62 usable host addresses. The company needs 12 IP phones, but in case the company expands, then we have got enough host addresses.
+
+3. Network diagram illustrating the company’s proposed infrastructure.
+4. Documentation of the Ubuntu Server installation and configuration on VLAN 571.
+5. Documentation of the Docker installation and deployment of the login platform.
+6. Documentation of the client machine on VLAN 570.
+7. Documentation demonstrating communication between the client and the login platform.
+8. Brief description of any challenges encountered and how they were resolved.
+
+Final reflection
+Conclude your submission with a brief overall reflection on the assignment.
+Consider questions such as:
 
 • How are security and infrastructure interconnected?
 The two subjects are interconnected in the way that the security subject manages the security of the login platform, by implementing the security features authorization, authentication, password hashing and token generation. The infrastructure subject makes it possible to host the application with Docker and to run the application via Ubuntu Server. 
+
+• What technical challenges did you encounter?
+• What did you learn about deploying an application on a server?
+• What would you do differently if the solution were to be deployed in a real company?
