@@ -40,12 +40,12 @@ Superuserpage:
 along the way.
 
 The login platform includes security features such as authorization, authentication, password hashing and token generation. 
-Authorization is used to check that when a user logs in, then the users username and password should match an exisiting user found in the database.
+Authentication is used to check that when a user logs in, then the users username and password should match an exisiting user found in the database.
 
 <img width="1055" height="293" alt="image" src="https://github.com/user-attachments/assets/331a0e65-63dd-4b70-8d54-f2ea7737227d" />
 This is used for example here in the LoginController. If no user is found with that username and password, then the program returns Unauthorized which means the login wasn't a successful login
 
-Authentication is used so only users with the right roles should be able to access specific pages. For example if you log in to the application with a user account, then you are not able to access the admin page, since you have only the User role and not the admin role.
+Authorization is used so only users with the right roles should be able to access specific pages. For example if you log in to the application with a user account, then you are not able to access the admin page, since you have only the User role and not the admin role.
 This is used in all the backend controller endpoints. For example, at the top of the admin controller, there is this setting 
 
 <img width="239" height="30" alt="image" src="https://github.com/user-attachments/assets/74eee964-6690-4ad5-9c69-70ee00618e07" />
