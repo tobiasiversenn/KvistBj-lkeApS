@@ -38,13 +38,41 @@ along the way.
 The login platform includes security features such as authorization, authentication, password hashing and token generation. 
 Authorization is used to check that when a user logs in, then the users username and password should match an exisiting user found in the database.
 
+<img width="1055" height="293" alt="image" src="https://github.com/user-attachments/assets/331a0e65-63dd-4b70-8d54-f2ea7737227d" />
+This is used for example here in the LoginController. If no user is found with that username and password, then the program returns Unauthorized which means the login wasn't a successful login
+
 Authentication is used so only users with the right roles should be able to access specific pages. For example if you log in to the application with a user account, then you are not able to access the admin page, since you have only the User role and not the admin role.
+This is used in all the backend controller endpoints. For example, at the top of the admin controller, there is this setting 
+
+<img width="239" height="30" alt="image" src="https://github.com/user-attachments/assets/74eee964-6690-4ad5-9c69-70ee00618e07" />
+
+This does so the user must have the admin role in order to access this.
+
 
 Password hashing is used so users passwords are not stored as plain text in the database, but instead they are hashed. This is great so if the database gets compromised then all the passwords will not be directly available, they will instead be in a different format so they are useless information for the person that gains access to the database.
 When getting all the users usernames and passwords from the database, you can see that the passwords are hashed. The passwords are hashing in the way that they are concatenated by a hash and a salt. The part before the "." in the passwordhash in the hash and the part after the "." is the salt.
 <img width="590" height="350" alt="image" src="https://github.com/user-attachments/assets/ccd642d6-4e8c-46da-bae1-c73f49911548" />
-When a user is registered, their password is also hashed. It happens in this code: 
 
+When a user is registered, their password is also hashed. It happens in this code: 
+<img width="650" height="159" alt="image" src="https://github.com/user-attachments/assets/456bfaad-92c2-4356-8505-d24776bf5087" />
+
+This image is from the userQueriesController in the backend. It calls the HashAndSaltPassword(string password) method from the Argon2PasswordHasher class which will hash and salt the password. The Argon2PasswordHasher code looks like this for that method: 
+<img width="567" height="134" alt="image" src="https://github.com/user-attachments/assets/348685e0-536f-4fc8-9dc5-01df767e7c2c" />
+<img width="603" height="330" alt="image" src="https://github.com/user-attachments/assets/cee1beb7-4804-467b-af09-34ba299c6d4e" />
+
+Password hashing is also used when a user logs in via the login platform. The program stores the password that the user enters via the login platform and then finds the stored password hash for that user in the database. It is demonstrated in the screenshot below
+
+<img width="1050" height="285" alt="image" src="https://github.com/user-attachments/assets/96977d50-fb9f-448a-a340-ffee1c43622f" />
+
+After that is done, the code calls a method from the Argon2PasswordHasher to check whether the users password is valid. 
+
+<img width="605" height="300" alt="image" src="https://github.com/user-attachments/assets/d9da0751-80cb-485f-a924-bb40c8351c58" />
+
+What this does is that we split the HashedPassword stored from the database to that user where there is a ".". The "." seperates the hash and salt so we can now store the salt as a variable. We need to do this because we should not call the method to create a new salt because every new salt generated will be random. So we then call HashPassword(password, salt); and store it in a variable string hashedPasswordForGivenPassword. This will hash the password that the user entered and use the salt to the PasswordHash already found in the database for that user. We then check whether the newly Hashed password is the same as the hashed password stored in the database for that user. If it is, we return true, otherwise false. 
+
+
+
+Password hashing is used in the way that the program reads the password that the user enters and finds the passwordhash in the database stored for that specific user. It then
 
 
 Token generation is also used. This does so when a user logs in with valid credentials then they get a token that can be found in the browsers sessionStorage. Tokens are used for many applications worldwide and is a good security feature. 
