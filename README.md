@@ -3,18 +3,18 @@ Your submission must include:
 1.	Description of the developed login platform.
 The login platform includes a platform where the user enters a username and password and then the user is redirected to either the page for users, admins or superusers depending on whether the login is from a user, superuser or admin. The user must log in with a valid username and password in order to access these pages.
 You can login to the application with the following accounts to test the application:
-<br>
-Username: "James"
-Password: "password"
-Role: User
 
-Username: "Kyle"
-Password: "password"
-Role: Superuser
+<br> Username: "James" 
+<br> Password: "password"
+<br> Role: User
 
-Username: "Xenia"
-Password: "password"
-Role: Admin
+<br> Username: "Kyle"
+<br> Password: "password"
+<br> Role: Superuser
+
+<br> Username: "Xenia"
+<br> Password: "password"
+<br> Role: Admin
 
 Whenever you close the program, the database resets so that these accounts can be used to log in to the system again in case they were deleted under the administration panels in the program. Additional accounts that can log in to the program can be found in the Program.cs file under the API project.
 
